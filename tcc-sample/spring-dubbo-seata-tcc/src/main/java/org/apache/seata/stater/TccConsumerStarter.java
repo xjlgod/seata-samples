@@ -16,8 +16,8 @@
  */
 package org.apache.seata.stater;
 
-import io.seata.common.util.StringUtils;
-import io.seata.core.context.RootContext;
+import org.apache.seata.common.util.StringUtils;
+import org.apache.seata.core.context.RootContext;
 import org.apache.seata.service.TccTransactionService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Assert;

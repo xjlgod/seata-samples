@@ -16,12 +16,11 @@
  */
 package org.apache.seata.service;
 
-import io.seata.core.context.RootContext;
-import io.seata.spring.annotation.GlobalTransactional;
-import org.apache.dubbo.common.utils.StringUtils;
 import org.apache.seata.action.ResultHolder;
 import org.apache.seata.action.TccActionOne;
 import org.apache.seata.action.TccActionTwo;
+import org.apache.seata.core.context.RootContext;
+import org.apache.seata.spring.annotation.GlobalTransactional;
 import org.springframework.util.Assert;
 
 import java.util.ArrayList;

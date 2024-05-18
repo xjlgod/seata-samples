@@ -56,7 +56,7 @@
         <property name="corePoolSize" value="1"/>
         <property name="maxPoolSize" value="20"/>
     </bean>
-    <bean class="io.seata.saga.rm.StateMachineEngineHolder">
+    <bean class="org.apache.seata.saga.rm.StateMachineEngineHolder">
         <property name="stateMachineEngine" ref="stateMachineEngine"/>
     </bean>
 

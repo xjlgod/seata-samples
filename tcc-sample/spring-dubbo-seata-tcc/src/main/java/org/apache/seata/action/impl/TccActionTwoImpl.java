@@ -18,7 +18,7 @@ package org.apache.seata.action.impl;
 
 import java.util.List;
 
-import io.seata.rm.tcc.api.BusinessActionContext;
+import org.apache.seata.rm.tcc.api.BusinessActionContext;
 import org.apache.seata.action.ResultHolder;
 import org.apache.seata.action.TccActionTwo;
 
