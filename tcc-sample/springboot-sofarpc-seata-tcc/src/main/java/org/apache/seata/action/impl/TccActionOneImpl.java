@@ -26,6 +26,8 @@ import org.apache.seata.action.TccActionOne;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.util.Random;
+
 @SofaService(interfaceType = TccActionOne.class, bindings = { @SofaServiceBinding(bindingType = "bolt") })
 @Service
 public class TccActionOneImpl implements TccActionOne {
@@ -44,7 +46,12 @@ public class TccActionOneImpl implements TccActionOne {
         Assert.isTrue(actionContext.getActionContext("a") != null);
         System.out.println("TccActionOne commit, xid:" + xid + ", a:" + actionContext.getActionContext("a"));
         ResultHolder.setActionOneResult(xid, "T");
-        return true;
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            throw new RuntimeException("rollback");
+        } else {
+            return true;
+        }
     }
 
     @Override
@@ -53,6 +60,11 @@ public class TccActionOneImpl implements TccActionOne {
         Assert.isTrue(actionContext.getActionContext("a") != null);
         System.out.println("TccActionOne rollback, xid:" + xid + ", a:" + actionContext.getActionContext("a"));
         ResultHolder.setActionOneResult(xid, "R");
-        return true;
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            throw new RuntimeException("rollback");
+        } else {
+            return true;
+        }
     }
 }

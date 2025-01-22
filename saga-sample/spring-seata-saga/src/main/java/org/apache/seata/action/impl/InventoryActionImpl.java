@@ -20,6 +20,8 @@ import org.apache.seata.provider.action.InventoryAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Random;
+
 /**
  * @author lorne.cl
  */
@@ -30,12 +32,22 @@ public class InventoryActionImpl implements InventoryAction {
     @Override
     public boolean reduce(String businessKey, int count) {
         LOGGER.info("reduce inventory succeed, count: " + count + ", businessKey:" + businessKey);
-        return true;
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            throw new RuntimeException("rollback");
+        } else {
+            return true;
+        }
     }
 
     @Override
     public boolean compensateReduce(String businessKey) {
         LOGGER.info("compensate reduce inventory succeed, businessKey:" + businessKey);
-        return true;
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            throw new RuntimeException("rollback");
+        } else {
+            return true;
+        }
     }
 }

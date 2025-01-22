@@ -42,7 +42,7 @@ public class TccProviderStarter {
 //
 //
 //        //mock zk server
-//        mockZKServer();
+        mockZKServer();
 
         if (isInE2ETest()) {
             // wait seata-server

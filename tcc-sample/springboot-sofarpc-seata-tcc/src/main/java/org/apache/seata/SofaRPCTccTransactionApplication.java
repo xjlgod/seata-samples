@@ -59,11 +59,12 @@ public class SofaRPCTccTransactionApplication {
 
         tccTransactionService = applicationContext.getBean(TccTransactionService.class);
 
-        //分布式事务提交demo
-        transactionCommitDemo();
+        for (int i = 0; i < 5; i++) {
+            transactionCommitDemo();
 
-        //分布式事务回滚demo
-        transactionRollbackDemo();
+            //分布式事务回滚demo
+            transactionRollbackDemo();
+        }
     }
 
     private static void mockZKServer() throws Exception {

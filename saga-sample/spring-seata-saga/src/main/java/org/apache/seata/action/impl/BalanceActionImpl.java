@@ -16,12 +16,12 @@
  */
 package org.apache.seata.action.impl;
 
-import java.math.BigDecimal;
-import java.util.Map;
-
 import org.apache.seata.provider.action.BalanceAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.math.BigDecimal;
+import java.util.Map;
 
 /**
  * @author lorne.cl

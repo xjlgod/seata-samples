@@ -27,7 +27,9 @@ public class TestController {
     }
 
     @GetMapping("/rollback")
-    public Object rollback(@RequestParam(required = false, defaultValue =  TestData.USER_ID) String userId,
+    public Object
+
+    rollback(@RequestParam(required = false, defaultValue =  TestData.USER_ID) String userId,
                            @RequestParam(required = false, defaultValue = TestData.COMMODITY_CODE) String commodityCode,
                            @RequestParam(required = false, defaultValue = "2") int orderCount) {
         JSONObject jsonObject = new JSONObject();
