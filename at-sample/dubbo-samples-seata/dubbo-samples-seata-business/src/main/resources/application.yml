@@ -38,6 +38,12 @@ seata:
         grouplist:
             default: ${seata.address:127.0.0.1}:${seata.port:8091}
     registry:
-        type: file
+        type: seata
+        seata:
+            server-addr: 127.0.0.1:8081   ## IP + port of the naming server configured in the first step. Use commas to separate multiple naming server nodes.
+            namespace: public  ## Namespace
+            heartbeat-period: 5000
+            username: seata
+            password: seata
     config:
         type: file
