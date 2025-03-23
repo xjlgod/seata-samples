@@ -51,6 +51,7 @@ public class BusinessServiceTester {
             String res =  "{\"res\": \"success\"}";
             try {
                 businessService.purchase("U100001", "C00321", 2);
+                Thread.sleep(5000);
                 if (E2EUtil.isInE2ETest()) {
                     E2EUtil.writeE2EResFile(res);
                 }
